@@ -1,0 +1,11 @@
+{
+  "name": "marta-geojson",
+  "description": "Parse marta gtfs to GeoJSON",
+  "dependencies": {
+    "csv-parse": "^1.2.0",
+    "superagent": "^3.5.0"
+  },
+  "scripts": {
+    "start": "node shapes"
+  }
+}
