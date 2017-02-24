@@ -3,9 +3,7 @@ const parse = require('csv-parse')
 const request = require('superagent')
 const autoParse = require('./autoParse')
 
-const urls = {
-  shapes: 'http://opendata.itsmarta.com/hackathon/2017/February/GTFS/shapes.csv'
-}
+const url = process.argv[2] || 'http://opendata.itsmarta.com/hackathon/2017/February/GTFS/shapes.csv'
 /*
 
 Shape {
@@ -27,9 +25,8 @@ const parseOpts = {
 const routes = {}
 let lastShape = null
 
-request.get(urls.shapes).pipe(new parse(parseOpts))
-  .once('data', (v) => {
-    console.log(v)
+request.get(url).pipe(new parse(parseOpts))
+  .on('data', (v) => {
     if (v.shape_id !== lastShape) {
       console.log('shape: ', v.shape_id)
       lastShape = v.shape_id
