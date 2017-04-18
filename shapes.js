@@ -3,7 +3,7 @@ const parse = require('csv-parse')
 const request = require('superagent')
 const autoParse = require('./autoParse')
 
-const url = process.argv[2] || 'http://opendata.itsmarta.com/hackathon/2017/February/GTFS/shapes.csv'
+const url = process.argv[2] || 'http://opendata.itsmarta.com/hackathon/2016/December/GTFS/shapes.csv' //'http://opendata.itsmarta.com/hackathon/2017/February/GTFS/shapes.csv'
 /*
 
 Shape {
